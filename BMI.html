@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head> 
+    <title>SAWS_SimpleAdaptiveWebSite</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+</head>
+<body> 
+    <div id="wrapper">
+    <div id="header" class="headtext">HTML|CSS|JS</div> 
+    <div id="content" class="content">
+    <div id="colLeft">
+        <ul id="navbar">
+            <li><a href="index.html">Головна</a></li>
+            <li><a id="active">Розрахунки</a>
+                <ul>
+                    <li><a href="SQD.html">Розв'язок кв.рівняння</a></li>
+                    <li><a href="BMI.html" id="active">BMI</a></li>
+                </ul>
+            </li>
+            <li><a href="projects.html">Роботи</a></li>
+        </ul>    
+    </div>
+    <div id="colRight">
+    <div class="textcontent">
+    <ul>
+        <li><h2>Індекс маси тіла</h2></li>
+        Індекс маси тіла величина, що дозволяє оцінити ступінь відповідності маси людини та його зростання і тим самим, побічно, оцінити, чи є маса недостатньою, нормальною, надмірною (ожиріння).<li><h2>Індекс Маси Тіла розраховується за формулою: ІМТ = вага (кг) / зріст(м)<sup><small>2</small></</h2></li>
+        <table>	
+            <tr><td>Гострий дефіцит маси </td><td><16</td></tr>
+            <tr><td>Недостатня маса тіла</td><td>16 - 18.5</td></tr>
+            <tr><td>Норма</td><td>18.6 - 25</td></tr>
+            <tr><td>Надлишкова маса тіла </td><td>25.1 - 30</td></tr>
+            <tr><td>Ожиріння першого ступеня</td><td>30.1 - 35</td></tr>
+            <tr><td>Ожиріння другого ступеня</td><td>35.1 - 40</td></tr>
+            <tr><td>Ожиріння третього ступеня</td><td>> 40.1</td></tr>
+        </table>
+
+        <li><h2>Розрахувати</h2></li>
+        <hr> 
+        <h4>
+        <form>
+        Введіть свій зріст: <input type="int" size='8' id="a" placeholder="Зріст"/> м</br></br>
+        Введіть свою вагу: <input type="int" size='8' id="b" placeholder="Вага"/> кг</br></br>
+        <a href="#rozr"><input id="tut" class="btn" type="button"  value="Розрахувати" /></a></br></br>
+        Результат:
+        <div id="rozr">
+        <output id = "Dis" size="30" placeholder="Індекс маси тіла (BMI)" readonly></output>	
+        </br></br>
+        <input class="btn" type="reset">
+        </div>
+        </form>
+        </h4>
+        <script type="text/javascript">
+tut.onclick = function(){
+	var rost = document.getElementById('a');
+	var masa = document.getElementById('b');
+	var bmi = (masa.value)/(rost.value*rost.value);
+	if (rost!= null){
+	document.getElementById('Dis').value = 'Ваш BMI '+bmi;
+	}
+
+}
+
+</script>
+    </ul>
+    </div>
+    </div>      
+    </div> 
+    <div id="footer"> &copy;&nbsp;Nazar Dudyak &nbsp;<span class="separator">|</span>&nbsp; <a href="#">Nazar.Dudyak.com</a> </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ua">
+<head> 
+    <title>SAWS_SimpleAdaptiveWebSite</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+</head>
+<body> 
+    <div id="wrapper">
+    <div id="header" class="headtext">HTML|CSS|JS</div> 
+    <div id="content" class="content">
+    <div id="colLeft">
+        <ul id="navbar">
+            <li><a href="index.html">Головна</a></li>
+            <li><a id="active">Розрахунки</a>
+                <ul>
+                    <li><a href="SQD.html" id="active" >Розв'язок кв.рівняння</a></li>
+                    <li><a href="BMI.html">BMI</a></li>
+                </ul>
+            </li>
+            <li><a href="projects.html">Роботи</a></li>
+        </ul>    
+    </div>
+    <div id="colRight">
+    <ul>
+        <li><h2>Квадратне Рівняння</h2></li>
+        Квадратне рівняння — це рівняння вигляду ax<sup><small>2</small></sup> + bx + c = 0, де a не дорівнює 0.
+        Загальним розв'язком цього рівняння є формула X<small>1,2</small>=-b+-√D/2a        
+        <li><h2>Дискримінант квадратного рівняння</h2></li>
+        Дискримінант <b>D</b> квадратного рівняння ax<sup><small>2</small></sup> + bx + c = 0 рівний <b>D</b> = b<sup><small>2</small></sup> − 4ac.
+        <ul>
+            <li>Якщо <b>D = 0</b> єдиний корінь (точніше — два однакові корені)</li>
+            <li>Якщо <b>D > 0</b> у цьому випадку дане рівняння має два корені.</li>
+            <li>Якщо <b>D < 0</b> то у цьому випадку дане рівняння не має коренів взагалі.</li>
+        </ul>
+        <li>
+        <hr>
+        <h2>Онлайн Розв'язання</h2></li>
+        </ul>
+        <h4>
+        <form>Розв'язати Рівняння Ви Зможите Нижче.</br>
+            Приклад: x<sup><small>2</small></sup>+26x+120=0
+            Коефіціїнти: A=1; B=26; C=120;</br></br>
+            Уведіть коефіцієнти квадратного рівняння:</br></br>
+            A = <input type="int" size='8' id="a" placeholder="Коефіцієнт a"/>;
+            B = <input type="int" size='8' id="b" placeholder="Коефіцієнт b"/>;
+            C = <input type="int" size='8' id="c" placeholder="Коефіцієнт c"/>;</br></br>
+            <a href="#rozr"><input id="tut" class="btn" type="button"  value="Розв'язати" /></a></br></br>
+            Результат:
+            <div id="rozr">
+                <input type = "text" id = "Dis" size="30" placeholder="Дискримінант" readonly></input></br></br>
+                <input type = "text" id = "X1" size="20" placeholder="X1" readonly></input>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "text" id = "X2" size="20" placeholder="X2" readonly></input></br></br>
+            <input  type="reset" class="btn" value="Скинути все">
+            </div>
+        </form>
+        <hr>
+        </h4>
+    <div id="footer"> &copy;&nbsp;Nazar Dudyak &nbsp;<span class="separator">|</span>&nbsp; <a href="">Nazar.Dudyak.com</a> </div>
+    <script type="text/javascript">
+		tut.onclick = function(){
+		var a = document.getElementById('a');
+		var b = document.getElementById('b');
+		var c = document.getElementById('c');
+		var D = (b.value*b.value)-(4*a.value*c.value);
+		if (D == 0){
+		var x1 = (-b.value+Math.sqrt(D)/2*a.value);
+		var x2 = (-b.value-Math.sqrt(D)/2*a.value);
+		//alert('Дискримінант = '+D+'\nX = '+x.value);
+		document.getElementById('Dis').value = 'Дискримінант = '+D;
+		document.getElementById('X1').value = 'X1 = '+x1;
+		document.getElementById('X2').value = 'X2 = '+x2;
+		}else if (D > 0){
+		var x1 = (-b.value+Math.sqrt(D)/2*a.value);
+		var x2 = (-b.value-Math.sqrt(D)/2*a.value);
+		//alert('Дискримінант = '+D+'\nX1 = '+x1+'\nX2 = '+x2);
+		document.getElementById('Dis').value = 'Дискримінант = '+D+' (D>0)';
+		document.getElementById('X1').value = 'X1 = '+x1;
+		document.getElementById('X2').value = 'X2 = '+x2;
+		}else if (D < 0){
+		//alert( 'Дискримінант = '+D+' (D < 0)\nКоренів не має!' );
+		document.getElementById('Dis').value = 'Дискримінант = '+D+' (D<0)';
+		document.getElementById('X1').value = 'Рішення немає';
+		document.getElementById('X2').value = 'Рішення немає';
+		} 
+        }
+    </script>
+    </div>
+    </div>
+    </div>      
+    </div> 
+    <div id="footer"> &copy;&nbsp;Nazar Dudyak &nbsp;<span class="separator">|</span>&nbsp; <a href="#">Nazar.Dudyak.com</a> </div>
+    </div>
+</body>
+</html>
